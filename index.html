@@ -1,0 +1,66 @@
+<html>
+<head>
+<style>
+#Box{
+width:40%;
+height:fit-content;
+display:flex;
+align-items:center;
+justify-content:center;
+border:1px solid Black;
+margin:auto;
+padding:15px;
+background-color:white;
+}
+</style>
+</head>
+<body style="background-color:#8ffbe1">
+<div id="Box">
+<form onsubmit="Validate()">
+<label for="UN">UserName</label>
+<input type="text" id="UN">
+<br>
+<br>
+<label for="ML">Email</label>
+<input type="text" id="ML">
+<br>
+<br>
+<label for="Ph">PhoneNumber</label>
+<input type="text" id="Ph">
+<br>
+<br>
+<label for="Pwd">Password</label>
+<input type="password" id="Pwd">
+<br>
+<br>
+
+<input type="submit" value="submit">
+</form>
+</div>
+<script>
+function Validate(){
+var UN=document.getElementById("UN").value;
+var ML=document.getElementById("ML").value;
+var Ph=document.getElementById("Ph").value;
+var Pwd=document.getElementById("Pwd").value;
+var OUN=/^[^0-9][a-zA-Z0-9]*$/
+var OML=/^\w+[\.-]\w+@\w+[\.]\w{2,3}$/
+var OPh=/^[0-9]{10}$/
+var OPwd=/^[0-9a-zA-Z]{8,}$/
+if(!UN.match(OUN)){
+alert("Invalid UserName");
+}
+if(!ML.match(OML)){
+alert("Invalid MailId");
+}
+if(!Ph.match(OPh)){
+alert("Invalid Phone");
+}
+if(!Pwd.match(OPwd)){
+alert("Invalid Passwor  d");
+}
+/alert("Checking");/
+}
+</script>
+</body>
+</html>
